@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #5b5b5b;
+}
+
+.calculadora{
+    width: 300px;
+    background-color: aquamarine;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.calculadora span{
+    width: auto;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    background: #b3b3b3;
+    font-size: 1.2em;
+    color: black;
+    font-weight: 500;
+
+}
+
+.calculadora .operacao{
+    background: #2c2c2c;
+    color: #fff;
+}
+
+.calculadora .clear{
+    background: #700101;
+    color: #fff;
+}
+
+.calculadora .inputArea{
+    grid-column: span 4;
+    padding: 20px 10px;
+    outline: none;
+    border: none;
+    font-size: 1.3em;
+}
+
+.calculadora .plus{
+    grid-row: span 2;
+    height: 120px;
+    line-height: 120px;
+}
+
+.calculadora .equal{
+    width: auto;
+    grid-column: span 2;
+    background: #004740;
+    font-size: 1.3em;
+}
+
+#historico{
+    width: 260px;
+    height: 365px;
+    overflow: scroll;
+    text-align: center;
+    background: #004740;
+    font-size: 1.1em;
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+
+#historico::-webkit-scrollbar{
+    width: 0;
+}
+
+#historico h3{
+    padding: 10px 0;
+    font-size: 1.2em;
+}
+
+#historico p:last-child{
+    font-size: 1.3em;
+    font-weight: 500;
+    color: #fff;
+}
