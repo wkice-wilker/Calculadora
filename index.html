@@ -1,18 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Calculadora/CSS/index.css" type="text/css">
+    <link rel="stylesheet" href="../CSS/index.css" type="text/css">
+    
     <title>Calculadora Wkice</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        $(function bg() {
+         $('#bg').load("background.html", function(response, status, xhr) {
+             if (status == "error") {
+                 console.log("Erro ao carregar o arquivo background.html");
+             }
+         });
+     });
+    </script>
 </head>
 <body>
     <form action="" class="calculadora" name="calc">
-        <input type="text" name="txt" class="inputArea">
+        <input type="text" name="txt" class="inputArea" id="inputArea">
         <span onclick="document.calc.txt.value +='1';">1</span>
         <span onclick="document.calc.txt.value +='2';">2</span>
         <span onclick="document.calc.txt.value +='3';">3</span>
-        <span class="clear" onclick="document.calc.txt.value +='';">C</span>
+        <span class="clear" onclick="document.calc.txt.value ='';">C</span>
         <span onclick="document.calc.txt.value +='4';">4</span>
         <span onclick="document.calc.txt.value +='5';">5</span>
         <span onclick="document.calc.txt.value +='6';">6</span>
@@ -22,14 +35,21 @@
         <span onclick="document.calc.txt.value +='9';">9</span>
         <span onclick="document.calc.txt.value +='0';">0</span>
         <span onclick="document.calc.txt.value +='.';">.</span>
-        <span onclick="document.calc.txt.value +='0';">B</span>
+        <span onclick="document.calc.txt.value = backspace(document.calc.txt.value);"><svg xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="15px" height="15px"><path d="M17.921,1.505a1.5,1.5,0,0,1-.44,1.06L9.809,10.237a2.5,2.5,0,0,0,0,3.536l7.662,7.662a1.5,1.5,0,0,1-2.121,2.121L7.688,15.9a5.506,5.506,0,0,1,0-7.779L15.36.444a1.5,1.5,0,0,1,2.561,1.061Z"/></svg></span>
         <span class="operacao" onclick="document.calc.txt.value +='-';">-</span>
-        <span class="equal" onclick="document.calc.txt.value +='';">=</span>
+        <span class="equal" onclick="document.calc.txt.value += calcular(document.calc.txt.value);">=</span>
         <span class="operacao" onclick="document.calc.txt.value +='*';">*</span>
         <span class="operacao" onclick="document.calc.txt.value +='/';">/</span>
     </form>
     <div id="historico">
         <h3>Histórico</h3>
+        <p></p>
     </div>
+
+    <div id="bg"></div>
+
 </body>
+
+
+<script type="text/script" src="../JS/calculadora.js"></script>
 </html>
