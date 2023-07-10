@@ -1,10 +1,10 @@
-let historico = document.getElementById('historico');
+let historico = document.getElementById('p');
 
 function calcular(v){
     let para = document.createElement('p');
     let data = v + " = " + eval(v);
     para.innerText = data;
-    historico.appendChild(para);
+    historico.prepend(para);
     return eval(v);
 }
 

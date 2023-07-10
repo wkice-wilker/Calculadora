@@ -336,7 +336,7 @@ body{
     font-size: 1.2em;
 }
 
-#historico p:last-child{
+#historico p:first-child{
     font-size: 1.3em;
     font-weight: 500;
     color: #fff;
